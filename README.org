@@ -1,2 +1,12 @@
 * Introduction
 My dot files, mainly Colemak related
+* Structure
+README.org
+** create_link.sh
+Create dot files. Need to be source in the root directory.
+** bashrc                                                   **
+** taskrc
+** tigrc
+** tmux.conf
+* Branches
+
