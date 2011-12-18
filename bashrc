@@ -25,7 +25,7 @@ alias tkdiff="/Applications/TkDiff.app/Contents/MacOS/Wish\ Shell"
 set -o vi
 export CLICOLOR=1
 
-export EDITOR=/usr/bin/vi
+export EDITOR=/usr/bin/vim
 
 #Dir navigation
 function pd {
