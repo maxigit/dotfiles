@@ -1,0 +1,22 @@
+bind generic n move-down
+bind generic e move-up
+bind generic  V edit
+bind generic  k find-next
+bind generic  K find-prev
+bind generic  G move-last-line
+bind generic  r scroll-page-down
+bind generic s screen-redraw
+
+bind generic N move-page-down
+bind generic E move-page-up
+
+bind generic ^E previous
+bind generic ^L scroll-line-down
+
+
+set show-rev-graph = yes
+set show-date = relative
+set show-author = abbreviated
+
+color title-focus white black bold
+color title-blur cyan black
