@@ -1,0 +1,2 @@
+* Introduction
+My dot files, mainly Colemak related
