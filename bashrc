@@ -1,12 +1,21 @@
-export HTTP_PROXY=http://127.0.0.1:3128 
-export http_proxy=$HTTP_PROXY
-export https_proxy=$HTTP_PROXY
+function set_proxy() {
+	export HTTP_PROXY=http://127.0.0.1:3128 
+	export http_proxy=$HTTP_PROXY
+	export https_proxy=$HTTP_PROXY
+}
+
+function unset_proxy() {
+	unset HTTP_PROXY
+	unset http_proxy
+	unset https_proxy
+}
 #PATH
 export PATH=/usr/local/bin:$PATH
 export PATH=$PATH:/usr/local/mysql/bin
 export PATH=$PATH:./script
 export PATH=$PATH:/Library/apache-activemq-5.2.0/bin
 export PATH=$PATH:/Library/instantclient
+export PATH=$PATH:/Library/PostgreSQL/9.1/bin
 export PATH=~/.bin:$PATH
 export DYLD_LIBRARY_PATH=/Library/instantclient
 export TNS_ADMIN=/Library/instantclient/Config
@@ -33,7 +42,7 @@ function pd {
 }
 alias cdl="dirs -v"
 function sd {
-	cd $(dirs -l +$1)
+cd $(dirs -l +$1)
 }
 
 alias cds=sd
@@ -52,14 +61,18 @@ alias mae="cd /Users/mb14/private/mae"
 #task completion
 . ~/.task_completion.sh
 
+#tig completion
+. ~/.tig-completion.bash
 
+#tmux completoin
+. ~/.tmux_completion.bash
 #BASH should be in bashrc
 export PS1='\[\e[34m\]\u\[\e[0m\]@\[\e[34m\]\h \[\e[35m\]\w\[\e[0m\]$ '
 
 function set_prompt_git {
 export GIT_PS1_SHOWDIRTYSTATE=1
 export GIT_PS1_SHOWSTASHSTATE=1
-export PS1='\n\[\e[103m\e[30m\]\u\[\e[30m\] $(__git_ps1 "(\[\e[94m\]%s\[\e[30m\]) ")\[\e[31m\]\w\[\e[30m\] ============================= [\[\e[94m\]\t\[\e[30m\]]\[\e[0m\]\[\e[109m\]\n(\!) $  '
+export PS1='\n\[\e[42m\e[30m\]\u\[\e[30m\] $(__git_ps1 "(\[\e[97m\]%s\[\e[30m\]) ")\[\e[31m\]\w\[\e[30m\] ============================= [\[\e[97m\]\t\[\e[30m\]]\[\e[0m\]\[\e[109m\]\n(\!) $  '
 }
 function set_promt_dark {
 export PS1='\[\e[33\]\u\[\e[0m\]@\[\e[33m\]\h \[\e[35m\]\w\[\e[0m\]$ '
@@ -96,8 +109,6 @@ export PATH=/opt/local/bin:/opt/local/sbin:$PATH
 export MANPATH=/opt/local/share/man:$MANPATH
 # Finished adapting your MANPATH environment variable for use with MacPorts.
 
-alias vv="vi -w ~/key_strokes.txt"
-
 #Image Magick
 export MAGICK_HOME="/Library/ImageMagick-6.5.9"
 export PATH="$MAGICK_HOME/bin:$PATH"
@@ -108,24 +119,32 @@ export PATH=~/.cabal/bin:$PATH
 
 . ~/.etc/bash_completion
 
-export CDPATH=.:~/devel:~/.vim:~
-alias cdp="export CDPATH=$CDPATH:~/Dropbox:~/private:/Volumes/mae"
+export CDPATH=.:~/:~/devel:~/sequencescape:~/.vim:~
+alias cdp="export CDPATH=$CDPATH:~/Dropbox:~/private:/Volumes/mae:~/private/mae"
 #alias cdp="CDPATH=~/Dropbox:~/private:/Volumes/mae cd"
 
 growl() { echo -e $'\e]9;'${1}'\007' ; return  ; }
 cutags () {   grep -r --include=*.feature '^[ \t]*@' features/ | sed 's/^[^:]*://' | tr '@' '\n' | tr -d ' \t' | sort -u | grep $1 ;}
 
 
-alias toff="task rc.gc=off"
-alias td="task rc.gc=off done"
+alias ts="tig status"
+alias g="git"
 alias t="task"
 alias tl="task list"
-alias tm="task min"
-alias ta="task add"
+alias tstart="tw +S start"
+alias tstop="tw +S stop"
+alias tsinfo="tw +S info | tail -2 | head -1"
+alias ta="task add pri:L"
 alias tn="tasknote"
 alias tx="task next"
-alias tw="task rc.data.location:~/.task "
-alias th="task rc.data.location:~/Dropbox/org/.task"
+alias tw="t +w"
+alias th="t -w "
+alias tm="t '+mae or +gl'"
+#alias tw="task rc.data.location:~/.task "
+#alias th="task rc.data.location:~/Dropbox/org/.task"
 
-alias tsw="task config data.location"
-alias tsh="task config data.location ~/Dropbox/org/.task"
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+
+
+alias bush="bundle exec bash"
+alias bx='bundle exec'
