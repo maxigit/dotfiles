@@ -52,20 +52,20 @@ alias sprojects=~/devel/projects/script/$1
 alias mae="cd /Users/mb14/private/mae"
 
 #GIT completion
-. ~/.git-completion.bash
+. ~/.dotfiles/git-completion.bash
 #RAKE completion
-. ~/.rake-complete.bash
+. ~/.dotfiles/rake-complete.bash
 #CAP completion
-. ~/.cap-complete.bash
+. ~/.dotfiles/cap-complete.bash
 
 #task completion
-. ~/.task_completion.sh
+. ~/.dotfiles/task_completion.sh
 
 #tig completion
-. ~/.tig-completion.bash
+. ~/.dotfiles/tig-completion.bash
 
 #tmux completoin
-. ~/.tmux_completion.bash
+. ~/.dotfiles/tmux_completion.bash
 #BASH should be in bashrc
 export PS1='\[\e[34m\]\u\[\e[0m\]@\[\e[34m\]\h \[\e[35m\]\w\[\e[0m\]$ '
 
