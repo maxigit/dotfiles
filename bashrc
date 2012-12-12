@@ -1,5 +1,5 @@
 function set_proxy() {
-	export HTTP_PROXY=http://127.0.0.1:3128 
+	export HTTP_PROXY=http://wwwcache.sanger.ac.uk:3128 
 	export http_proxy=$HTTP_PROXY
 	export https_proxy=$HTTP_PROXY
 }
@@ -34,7 +34,7 @@ alias tkdiff="/Applications/TkDiff.app/Contents/MacOS/Wish\ Shell"
 set -o vi
 export CLICOLOR=1
 
-export EDITOR=/usr/bin/vi
+export EDITOR=/usr/local/bin/vi
 
 #Dir navigation
 function pd {
@@ -66,13 +66,19 @@ alias mae="cd /Users/mb14/private/mae"
 
 #tmux completoin
 . ~/.dotfiles/tmux_completion.bash
+
+
+# All completion
+if [ -f $(brew --prefix)/etc/bash_completion ]; then
+    . $(brew --prefix)/etc/bash_completion
+  fi
 #BASH should be in bashrc
 export PS1='\[\e[34m\]\u\[\e[0m\]@\[\e[34m\]\h \[\e[35m\]\w\[\e[0m\]$ '
 
 function set_prompt_git {
 export GIT_PS1_SHOWDIRTYSTATE=1
 export GIT_PS1_SHOWSTASHSTATE=1
-export PS1='\n\[\e[42m\e[30m\]\u\[\e[30m\] $(__git_ps1 "(\[\e[97m\]%s\[\e[30m\]) ")\[\e[31m\]\w\[\e[30m\] ============================= [\[\e[97m\]\t\[\e[30m\]]\[\e[0m\]\[\e[109m\]\n(\!) $  '
+export PS1='\n\[\e[42m\e[30m\]\u\[\e[30m\] \[\e[31m\]${BUNDLE_INFO}\[\e[30m\] $(__git_ps1 "(\[\e[97m\]%s\[\e[30m\]) ")\[\e[31m\]\w\[\e[30m\] ============================= [\[\e[97m\]\t\[\e[30m\]]\[\e[0m\]\[\e[109m\]\n(\!) $  '
 }
 function set_promt_dark {
 export PS1='\[\e[33\]\u\[\e[0m\]@\[\e[33m\]\h \[\e[35m\]\w\[\e[0m\]$ '
@@ -117,7 +123,8 @@ export PATH="$MAGICK_HOME/bin:$PATH"
 export PATH=~/.cabal/bin:$PATH
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # This loads RVM into a shell session.
 
-. ~/.etc/bash_completion
+# Not sure what it's used for
+#. ~/.etc/bash_completion
 
 export CDPATH=.:~/:~/devel:~/sequencescape:~/.vim:~
 alias cdp="export CDPATH=$CDPATH:~/Dropbox:~/private:/Volumes/mae:~/private/mae"
@@ -146,5 +153,5 @@ alias tm="t '+mae or +gl'"
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
 
-alias bush="bundle exec bash"
+alias bush='BUNDLE_INFO=$(date +"<%H:%M>") bundle exec bash'
 alias bx='bundle exec'
