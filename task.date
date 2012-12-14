@@ -1,0 +1,5 @@
+dateformat=d/m/Y
+dateformat.report=a D b Y
+dateformat.edit=d/m/Y H:N:S
+dateformat.info=d/m/Y H:N:S (A)
+dateformat.annotation=(a) d/m/Y H:N:S
