@@ -28,3 +28,24 @@ include /usr/local/share/doc/task/rc/light-256.theme
 include ~/.dotfiles/task.date
 
 merge.default.uri=mae:.task/
+verbose=off
+alias.m=+@mae
+alias.@m=+@mae
+alias.S=+@sanger
+alias.w=+@sanger
+alias.@s=+s@anger
+alias.@w=+@sanger
+alias.gl=+@mae +@fa +@gl
+alias.fa=+@mae +@fa +@dev
+alias.mop=+@mae +@fa +@dev
+
+alias.L=pri:L
+alias.M=pri:M
+alias.H=pri:H
+alias.mo=mod
+
+alias.back=wait:later +backlog
+alias._=+__last__
+alias.dev=+@dev
+alias.@dev=+@dev
+alias.-dev=-@dev
