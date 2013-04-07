@@ -1,4 +1,4 @@
-for file in bashrc taskrc tigrc tmux.conf
+for file in bashrc taskrc tigrc tmux.conf task_completion.sh tmux_completion.bash tig-completion.bash
 do
   ln -s .dotfiles/$file .$file
 done
