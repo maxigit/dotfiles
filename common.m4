@@ -10,3 +10,9 @@ define(`HOST', esyscmd(uname -n))
 define(`OS', esyscmd(uname -s))
 
 
+** Misc
+*** Or
+define(`or', `ifelse($1`'$2,,``or'', ifelse($1,,$2,$1))')
+*** Soft define : sdefine
+The following function defines only if the macro has not been defined yet.
+define(sdefine, `ifelse($1,,$1,ifdef($1,,define($1, $2)))') 

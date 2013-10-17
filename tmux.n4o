@@ -1,4 +1,6 @@
 dnl filetype:m4
+changecom(,)
+include(common.m4)
 sinclude(local.m4)dnl allow local overriding of some definitions.
 <<tmux.conf>>=
 set -g prefix C-k
@@ -7,21 +9,12 @@ bind @ command-prompt "joinp -t:##"
 set mode-mouse on
 set mouse-resize-pane on
 
-# zoom
-bind k run "tmux-zoom.sh"
-
-
 # panel separator color
 set -g pane-border-fg black
 set -g pane-active-border-fg red
 set -g pane-active-border-bg 8
-set -g status-bg cyan
 
 set-window -g  main-pane-height 5
-
-#  move around panes with hjkl, as one would in vim after pressing ctrl-w
-#bind n select-pane -D
-#bind e select-pane -U
 
 # feel free to change the "1" to however many lines you want to resize by, only
 # one at a time can be slow
@@ -55,8 +48,27 @@ bind H select-layout even-horizonta
 bind V select-layout even-vertical
 bind h select-layout even-horizontal
 
+
+@
+We only set this part because the center will change with pomodoro.
+For this, we use create an "associative array" like with the alias host as key..
+<<tmux.conf>>=
+sdefine(`HOST_BG', green)
+
+@ 
+** Color Macro
+<<tmux.conf>>=
+define(BG, `ifelse($#, 1,#[bg=$1],
+									$#, 2, `BG($1, $2, default)'
+									,`BG($1)$2BG($3)')')dnl
+
+BG(1)
+BG(1,2)
+BG(1,2,3)
+
+
 set -g status-left-length 100
-set -g status-left "#[bg=cyan] $USER@#h# #[bg=default] [#[fg=blue]#S#[fg=default]:#I.#P]"
+set -g status-left "#[bg=HOST_BG] $USER@#h# #[bg=default] [#[fg=blue]#S#[fg=default]:#I.#P]"
 set -g status-justify centre
 
 

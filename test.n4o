@@ -2,3 +2,19 @@ include(common.m4)
 <<test.txt*>>=
 Host = HOST
 `OS' = OS
+
+# Or function
+or -> or
+or(1) -> 1
+or(1,) -> 1
+or(1,2) ->  1
+or(,2) -> 2
+
+# sdefine
+sdefine(x,1)
+x -> 1
+sdefine(x,2)
+x -> 2
+
+
+
