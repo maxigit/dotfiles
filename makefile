@@ -1,6 +1,7 @@
+all: weave
 # preproces m4 files
 # noweb.m4.org -> noweb.orgmode
-%.nom: %.n4o
+%.nom: %.n4o tmp
 	m4 $< > $@
 
 N4O= $(wildcard *.n4o)
@@ -11,6 +12,7 @@ env:
 	echo $(NOWEB_SOURCES)
 
 weave: $(NOWEB_SOURCES)
-	noweb -t $(NOWEB_SOURCES)
+	noweb -t $(NOWEB_SOURCES) 
 
 
+DEFAULT: weave
