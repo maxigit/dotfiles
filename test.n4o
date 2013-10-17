@@ -1,0 +1,4 @@
+include(common.m4)
+<<test.txt*>>=
+Host = HOST
+`OS' = OS
