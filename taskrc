@@ -15,7 +15,7 @@ data.location=/Users/mb14/.task
 
 # Color theme (uncomment one to use)
 #include /usr/local/Cellar/task/2.1.2/share/doc/task/rc/light-16.theme
-include /usr/local/Cellar/task/2.1.2/share/doc/task/rc/light-256.theme
+#include /usr/local/Cellar/task/2.1.2/share/doc/task/rc/light-256.theme
 #include /usr/local/Cellar/task/2.1.2/share/doc/task/rc/dark-16.theme
 #include /usr/local/Cellar/task/2.1.2/share/doc/task/rc/dark-256.theme
 #include /usr/local/Cellar/task/2.1.2/share/doc/task/rc/dark-red-256.theme
@@ -52,3 +52,6 @@ alias.-dev=-@dev
 alias.feat=+feature
 alias.bug=+bug
 alias.ch=+chore
+uda.board.type=string
+uda.board.label=Board
+uda.board.values=sanger,mae,fa,dc,perso
