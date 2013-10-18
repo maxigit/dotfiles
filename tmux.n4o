@@ -50,29 +50,36 @@ bind h select-layout even-horizontal
 
 
 @
-We only set this part because the center will change with pomodoro.
-For this, we use create an "associative array" like with the alias host as key..
-<<tmux.conf>>=
-sdefine(`HOST_BG', green)
+Some macros to deal with colors. each call to a macro push the current colors.
 
+<<tmux.conf>>=
+sdefine(`BACKGROUND',green)
+sdefine(`FOREGROUND',black)
 @ 
 ** Color Macro
 <<tmux.conf>>=
-define(BG, `ifelse($#, 1,#[bg=$1],
-									$#, 2, `BG($1, $2, default)'
-									,`BG($1)$2BG($3)')')dnl
+define(`BG', `ifelse(
+$#,1, `pushdef(`BACKGROUND', $1)#[bg=BACKGROUND]'dnl
+,$#,2, `BG($1)$2`'GB'dnl
+,`BG(BACKGROUND)')')
+define(`GB', `popdef(`BACKGROUND')#[bg=BACKGROUND]')
 
-BG(1)
-BG(1,2)
-BG(1,2,3)
+define(`FG', `ifelse(
+$#,1, `pushdef(`FOREGROUND', $1)#[fg=FOREGROUND]'dnl
+,$#,2, `FG($1)$2`'GF()'dnl
+,`FG(FOREGROUND)')')
+define(`GF', `popdef(`FOREGROUND')#[fg=FOREGROUND]')
 
+sdefine(LEFT_LENGTH, 100)
+sdefine(RIGHT_LENGTH, 80)
+<<tmux.conf>>=
+set -g status-left-length LEFT_LENGTH
+set -g status-left "BG$USER`'FG(blue,@)HOST [FG(blue,#S):#I.#P]"
 
-set -g status-left-length 100
-set -g status-left "#[bg=HOST_BG] $USER@#h# #[bg=default] [#[fg=blue]#S#[fg=default]:#I.#P]"
 set -g status-justify centre
 
 
-set -g status-right-length 80
+set -g status-right-length RIGHT_LENGTH
 set -g status-right "#[bg=#ff8800]#(task active  | head -4|tail -1| tr -d \\n)#[default]<#(cat ~/.thyme-tmux)> \
 #(rainbarf --tmux --width 20)\
 #[fg=default,bg=default]| #(date '+%H:%M %a %d-%b-%Y')"
