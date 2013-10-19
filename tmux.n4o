@@ -52,9 +52,9 @@ bind h select-layout even-horizontal
 @
 Some macros to deal with colors. each call to a macro push the current colors.
 
-sdefine(`BACKGROUND',cyan)
+sdefine(`BACKGROUND',colour234)
 sdefine(`LEFT_BACKGROUND',green)
-sdefine(`RIGHT_BACKGROUND',green)
+sdefine(`RIGHT_BACKGROUND',colour22)
 sdefine(`FOREGROUND',black)
 sdefine(`RAINBARF_WIDTH', 10)
 @ 
@@ -89,7 +89,7 @@ set -g status-justify left
 
 
 set -g status-right-length RIGHT_LENGTH
-set -g status-right "BG(default) FG(red, #P) BLOCK(black)`'BG(green)BG(#ff8800)FG(red,#(task active  | head -4|tail -1|  tr -s [:blank:])) #(cat ~/.thyme-tmux) GB`'BLOCK(black) \
+set -g status-right "BG(default) FG(red, #P) BLOCK(black)`'BG(RIGHT_BACKGROUND)BG(#ff8800)FG(red,#(task active  | head -4|tail -1|  tr -s [:blank:])) #(cat ~/.thyme-tmux) GB`'BLOCK(black) \
 <<rainbarf>>=
 #(rainbarf --tmux --width RAINBARF_WIDTH RAINBARF_OPTIONS )BLOCK(black)\
 <<tmux.conf>>=
