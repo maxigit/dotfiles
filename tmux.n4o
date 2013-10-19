@@ -83,7 +83,7 @@ status-fg. It can be changed by the user.
 <<tmux.conf>>=
 set -g status-bg BACKGROUND
 set -g status-left-length LEFT_LENGTH
-set -g status-left "BG(LEFT_BACKGROUND) $USER`'FG(blue,@)HOST BLOCK(black)<<rainbarf>>`'BG(default) [#S] "
+set -g status-left "BG(LEFT_BACKGROUND) $USER`'FG(blue,@)HOST BLOCK(black)<<rainbarf>>`'BG(default) [#S] FG(white, #I) "
 
 set -g status-justify left
 
@@ -93,7 +93,7 @@ set -g status-right "BG(default) FG(red, #P) BLOCK(black)`'BG(RIGHT_BACKGROUND)B
 <<rainbarf>>=
 #(rainbarf --tmux --width RAINBARF_WIDTH RAINBARF_OPTIONS )BLOCK(black)\
 <<tmux.conf>>=
-%H:%M  %a %d-%b-%Y "
+%a %d-%b-%Y FG(white,%H:%M) "
 set -g status-interval 1
 
 set -g status-utf8 on
