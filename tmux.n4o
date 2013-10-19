@@ -88,7 +88,7 @@ set -g status-justify left
 
 
 set -g status-right-length RIGHT_LENGTH
-set -g status-right "BG(default) FG(red, #P) BLOCK(black)`'BG(green)BG(#ff8800)FG(red,#(task active  | head -4|tail -1| tr -d \\n)) #(cat ~/.thyme-tmux) GB`'BLOCK(black) \
+set -g status-right "BG(default) FG(red, #P) BLOCK(black)`'BG(green)BG(#ff8800)FG(red,#(task active  | head -4|tail -1|  tr -s [:blank:])) #(cat ~/.thyme-tmux) GB`'BLOCK(black) \
 <<rainbarf>>=
 #(rainbarf --tmux --width RAINBARF_WIDTH)BLOCK(black)\
 <<tmux.conf>>=

@@ -5,7 +5,7 @@ This file defines common m4 function to deal with different hosts like:
 + misc
 * Definitions
 ** Hostname
-define(`HOST', esyscmd(uname -n)) 
+define(`HOST', esyscmd(uname -n | tr -d \\n)) 
 ** OS
 define(`OS', esyscmd(uname -s))
 
