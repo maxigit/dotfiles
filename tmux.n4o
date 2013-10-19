@@ -74,6 +74,7 @@ define(`GF', `popdef(`FOREGROUND')#[fg=FOREGROUND]')
 define(`BLOCK', `BG($1, `FG'($1, `` ''))')
 sdefine(LEFT_LENGTH, 60)
 sdefine(RIGHT_LENGTH, 120)
+sdefine(`RAINBARF_OPTIONS')
 
 We want to be able to write at the extremity of the center bar.
 For that we use the `default' color. This is the color set by
@@ -90,7 +91,7 @@ set -g status-justify left
 set -g status-right-length RIGHT_LENGTH
 set -g status-right "BG(default) FG(red, #P) BLOCK(black)`'BG(green)BG(#ff8800)FG(red,#(task active  | head -4|tail -1|  tr -s [:blank:])) #(cat ~/.thyme-tmux) GB`'BLOCK(black) \
 <<rainbarf>>=
-#(rainbarf --tmux --width RAINBARF_WIDTH)BLOCK(black)\
+#(rainbarf --tmux --width RAINBARF_WIDTH RAINBARF_OPTIONS )BLOCK(black)\
 <<tmux.conf>>=
 %H:%M  %a %d-%b-%Y "
 set -g status-interval 1
