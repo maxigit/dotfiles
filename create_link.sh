@@ -1,4 +1,4 @@
-for file in .conf task_completion.sh tmux_completion.bash tig-completion.bash
+for file in .conf task_completion.sh tmux_completion.bash tig-completion.bash spacemacs
 do
   ln -s .dotfiles/$file .$file
 done
