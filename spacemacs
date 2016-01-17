@@ -267,9 +267,15 @@ layers configuration. You are free to put any user code."
  '(org-agenda-files (quote ("~/org/mae.org" "~/org/max.org")))
  '(org-default-notes-file "~/org/notes.org")
  '(org-directory "~/org")
+ '(org-goto-interface (quote outline-path-completion))
  '(org-indent-mode-turns-off-org-adapt-indentation t)
  '(org-mobile-agendas (quote default))
  '(org-mobile-directory "~/Dropbox/Apps/MobileOrg")
+ '(org-outline-path-complete-in-steps nil)
+ '(org-refile-targets
+   (quote
+    ((nil :maxlevel . 9)
+     (org-agenda-files :maxlevel . 9))))
  '(org-startup-indented t)
  '(paradox-github-token t)
  '(pos-tip-background-color "#073642")
