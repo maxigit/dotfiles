@@ -29,6 +29,7 @@ values."
      spotify
      git
      markdown
+     auto-completion
      ess
      org
      (shell :variables
