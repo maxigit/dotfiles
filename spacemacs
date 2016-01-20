@@ -40,8 +40,8 @@ values."
      version-control
      (haskell :variables
               haskell-enable-ghc-mod-support t
-              haskell-enable-ghci-ng--mod-support t
-              haskell-enable-shm-support t
+              haskell-enable-ghci-ng--mod-support nil
+              haskell-enable-shm-support nil
               )
      )
    ;; List of additional packages that will be installed without being
