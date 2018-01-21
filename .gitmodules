@@ -1,3 +1,6 @@
 [submodule "zsh/.zpresto"]
 	path = zsh/.zpresto
 	url = git@github.com:sorin-ionescu/prezto.git
+[submodule "xmonad/.xmonad"]
+	path = xmonad/.xmonad
+	url = git@github.com:maxigit/xmonad-config.git
