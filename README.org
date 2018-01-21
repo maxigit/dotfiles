@@ -1,12 +1,9 @@
 * Introduction
-My dot files, mainly Colemak related
-* Structure
-README.org
-** create_link.sh
-Create dot files. Need to be source in the root directory.
-** bashrc
-** taskrc
-** tigrc
-** tmux.conf
-* Branches
+My dot files, managed with [[https://www.gnu.org/software/stow/]][stow]
+
+
+- To deploy a specific "package"
+==stow <package>==
+- To deploy all
+==stock *==
 
