@@ -39,10 +39,6 @@ values."
      ranger
      games
      imenu-list
-     ;; (lsp (haskell :variables
-     ;;              haskell-completion-backend 'ghci
-     ;;              haskell-process-type 'stack-ghci
-     ;;      ))
      ;; ----------------------------------------------------------------
      ;; Example of useful layers youdeliing may want to use right away.
      ;; Uncomment some layer names and press <SPC f e R> (Vim style) or
@@ -86,7 +82,6 @@ values."
 				      shakespeare-mode
                                       hamlet-mode org-projectile
                                       haxe-mode
-                                      (lsp-haskell :location (recipe :fetcher github :repo "emacs-lsp/lsp-haskell"))
                                                )
    ;; dotspacemacs-additional-packages '(haxe-mode)
    ;; dotspacemacs-additional-packages '(outline-magic)
@@ -358,8 +353,6 @@ you should place you code here."
   ;;      (define-key outline-minor-mode-map (kbd "<C-tab>") 'outline-cycle)))
 
 
-  ;; (require 'lsp-ui)
-  ;; (require 'lsp-haskell)
   (add-hook 'haskell-mode-hook (lambda ()
                                  (outline-minor-mode)
                                  (define-key outline-minor-mode-map (kbd "<C-tab>") 'outshine-cycle-buffer)
@@ -369,7 +362,6 @@ you should place you code here."
   ;;                                ;;          symbol-end))
   ;;                                ;; (set (make-local-variable 'outline-level) #'haskell-outline-level)
                                  ))
-  ;; (add-hook 'haskell-mode-hook #'lsp-haskell-enable)
 
 )
 
