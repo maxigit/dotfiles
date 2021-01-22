@@ -29,7 +29,7 @@
   tab  q    w    e    r    t    y    u    i    o    p    [
   caps a    s    d    f    g    h    j    k    l    ;    '
   lsft z    x    c    v    b    n    m    ,    .    /    rsft
-  grv  102d left right                    down up   \    = 
+  grv  102d left rght                     down up   \    = 
   bspc lmet end                                pgup pgdn 
   rctl esc lalt                                ralt ret  spc
 )
@@ -40,16 +40,18 @@
   ;; num  (layer-toggle numbers) ;; Bind num to a button that switches to a layer
   ;; tnum (tap-hold-next 200 tab @num)
   tab (tap-hold-next 200 tab (layer-toggle tabbed))
+  cap (tap-hold-next 200 caps (layer-toggle extend))
   csp (tap-hold-next 200 spc ctl)
   sr (tap-hold-next 200 ret rsft)
   sl (tap-hold-next 200 esc lsft)
+  q C-spc
 )
 
 
 (deflayer dvorak
   ]    1    2    3    4    5    6    7    8    9    0    [
   @tab '    ,    .    p    y    f    g    c    r    l    /
-  caps a    o    e    u    i    d    h    t    n    s    -
+  @cap a    o    e    u    i    d    h    t    n    s    -
   @sl  ;    q    j    k    x    b    m    w    v    z    @sr 
   grv  102d left right                    down up   \    = 
   bspc lmet end                                pgup pgdn
@@ -58,10 +60,21 @@
 
 
 (deflayer tabbed
-  XX   XX   XX   XX   XX   XX   XX   nlck =    kp/  kp*  _
-  XX   XX   XX   XX   XX   XX   XX   kp7  kp8  kp9  kp-  _
-  XX   XX   XX   XX   XX   XX   XX   kp4  kp5  kp6  kp+  _
-  XX   XX   XX   XX   XX   XX   0    kp1  kp2  kp3  kprt rsft
+  XX   XX   XX   XX   XX   XX   XX   nlck =    kp/  kp*  XX
+  XX   XX   XX   XX   XX   XX   XX   kp7  kp8  kp9  kp-  XX
+  XX   XX   XX   XX   @q   XX   kp.  kp4  kp5  kp6  kp+  XX
+  XX   XX   XX   XX   XX   XX   kp0  kp1  kp2  kp3  kprt XX
+  XX   XX   XX   XX                  kp0  kp0  kp.  kprt
+  XX   XX   XX                                 XX   XX  
+  XX   XX   XX                                 XX   XX   XX 
+)
+
+
+(deflayer extend
+  XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX
+  XX   XX   XX   XX   XX   XX   home pgdn pgup end  XX   XX
+  XX   XX   XX   XX   XX   XX   left down up   rght bspc   XX
+  XX   XX   XX   XX   XX   XX   XX   [    ]    :    esc  XX
   XX   XX   XX   XX                       XX   XX   XX   XX
   XX   XX   XX                                 XX   XX  
   XX   XX   XX                                 XX   XX   XX 
