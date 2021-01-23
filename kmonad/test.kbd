@@ -66,6 +66,7 @@
   D0] \)
   D\ #
   D: Z
+  AR (tap-next (around-next ralt) ralt) 
 )
 
 (deflayer as-qwerty
@@ -74,8 +75,8 @@
   @cap a    s    d    f    g    h    j    k    l    ;    '
   @sl  z    x    c    v    b    n    m    ,    .    /    @sr 
   grv  102d left right                    down up   \    ] 
-  bspc lmet end                                pgup pgdn
-  @csp esc lalt                                ralt ret  spc
+  bspc lmet end                                pgup ralt 
+  @csp esc lalt                                pgdn ret  spc
 )
 
 (deflayer dvorak
@@ -84,8 +85,8 @@
   @cap a    o    e    u    i    d    h    t    n    s    -
   @sl  ;    q    j    k    x    b    m    w    v    z    @sr 
   grv  102d left right                    down up   \    = 
-  bspc lmet end                                pgup pgdn
-  @csp esc lalt                                ralt ret  spc
+  bspc lmet end                                pgup ralt
+  @csp esc lalt                                @AR  ret  spc
 )
 
 
