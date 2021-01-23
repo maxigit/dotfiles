@@ -23,7 +23,8 @@
 )
 
 
-
+#| Qwerty
+ |#
 (defsrc
   =    1    2    3    4    5    6    7    8    9    0    -
   tab  q    w    e    r    t    y    u    i    o    p    [
@@ -34,7 +35,17 @@
   rctl esc lalt                                ralt ret  spc
 )
 
-
+ #| Dvorak
+(defsrc
+  ]    1    2    3    4    5    6    7    8    9    0    [
+  tab  '    ,    .    p    y    f    g    c    r    l    /
+  caps a    o    e    u    i    d    h    t    n    s    -
+  lsft ;    q    j    k    x    b    m    w    v    z    rsft
+  grv  102d left right                    down up   \    = 
+  bspc lmet end                                pgup pgdn ;; rctl
+  lctl esc lalt                                ralt ret  spc
+)
+|#
 
 (defalias
   ;; num  (layer-toggle numbers) ;; Bind num to a button that switches to a layer
@@ -45,8 +56,27 @@
   sr (tap-hold-next 200 ret rsft)
   sl (tap-hold-next 200 esc lsft)
   q C-spc
+  ;; Symbols needs to be translated to equivalent qwerty
+  ;; This is because use Xorg Dvorak mod which translates afterward
+  D[ -
+  D] =
+  D{ \_
+  D} +
+  D0[ \(
+  D0] \)
+  D\ #
+  D: Z
 )
 
+(deflayer as-qwerty
+  =    1    2    3    4    5    6    7    8    9    0    -
+  @tab q    w    e    r    t    y    u    i    o    p    [
+  @cap a    s    d    f    g    h    j    k    l    ;    '
+  @sl  z    x    c    v    b    n    m    ,    .    /    @sr 
+  grv  102d left right                    down up   \    ] 
+  bspc lmet end                                pgup pgdn
+  @csp esc lalt                                ralt ret  spc
+)
 
 (deflayer dvorak
   ]    1    2    3    4    5    6    7    8    9    0    [
@@ -60,9 +90,9 @@
 
 
 (deflayer tabbed
-  XX   XX   XX   XX   XX   XX   XX   nlck =    kp/  kp*  XX
-  XX   XX   XX   XX   XX   XX   XX   kp7  kp8  kp9  kp-  XX
-  XX   XX   XX   XX   @q   XX   kp.  kp4  kp5  kp6  kp+  XX
+  XX   XX   XX   XX   XX   XX   @D{  nlck =    kp/  kp*  @D}
+  XX   XX   XX   XX   XX   XX   @D[  kp7  kp8  kp9  kp-  @D]
+  XX   XX   XX   XX   @q   XX   @D0[ kp4  kp5  kp6  kp+  @D0]
   XX   XX   XX   XX   XX   XX   kp0  kp1  kp2  kp3  kprt XX
   XX   XX   XX   XX                  kp0  kp0  kp.  kprt
   XX   XX   XX                                 XX   XX  
@@ -72,9 +102,9 @@
 
 (deflayer extend
   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX
-  XX   XX   XX   XX   XX   XX   home pgdn pgup end  XX   XX
+  XX   XX   XX   XX   XX   XX   home @D0[ @D0] @D{  @D}  @D\
   XX   XX   XX   XX   XX   XX   left down up   rght bspc   XX
-  XX   XX   XX   XX   XX   XX   XX   [    ]    :    esc  XX
+  XX   XX   XX   XX   XX   XX   XX   @D[  @D]  @D:    esc  XX
   XX   XX   XX   XX                       XX   XX   XX   XX
   XX   XX   XX                                 XX   XX  
   XX   XX   XX                                 XX   XX   XX 
