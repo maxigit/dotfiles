@@ -31,7 +31,7 @@
   caps a    s    d    f    g    h    j    k    l    ;    '
   lsft z    x    c    v    b    n    m    ,    .    /    rsft
   grv  102d left rght                     down up   \    = 
-  bspc lmet end                                pgup pgdn 
+  bspc end home                            pgup pgdn 
   rctl esc lalt                                ralt ret  spc
 )
 
@@ -52,7 +52,7 @@
   ;; tnum (tap-hold-next 200 tab @num)
   tab (tap-hold-next 200 tab (layer-toggle tabbed))
   cap (tap-hold-next 200 caps (layer-toggle extend))
-  csp (tap-hold-next 200 spc ctl)
+  csp (tap-hold-next-release 200 spc ctl)
   sr (tap-hold-next 200 ret rsft)
   sl (tap-hold-next 200 esc lsft)
   q C-spc
