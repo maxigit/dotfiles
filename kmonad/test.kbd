@@ -51,7 +51,7 @@
   ;; num  (layer-toggle numbers) ;; Bind num to a button that switches to a layer
   ;; tnum (tap-hold-next 200 tab @num)
   tab (tap-hold-next 200 tab (layer-toggle tabbed))
-  cap (tap-hold-next 200 caps (layer-toggle extend))
+  cap (tap-hold-next 200 esc  (layer-toggle extend))
   csp (tap-hold-next-release 200 spc ctl)
   sr (tap-hold-next 200 ret rsft)
   sl (tap-hold-next 200 esc lsft)
@@ -66,6 +66,7 @@
   D0] \)
   D\ #
   D: Z
+  D= ]
   AR (tap-next (around-next ralt) ralt) 
 )
 
@@ -91,22 +92,22 @@
 
 
 (deflayer tabbed
-  XX   XX   XX   XX   XX   XX   @D{  nlck =    kp/  kp*  @D}
+  XX   XX   XX   XX   XX   XX   @D{  nlck kp/  kp*  @D=  @D} 
   XX   XX   XX   XX   XX   XX   @D[  kp7  kp8  kp9  kp-  @D]
   XX   XX   XX   XX   @q   XX   @D0[ kp4  kp5  kp6  kp+  @D0]
-  XX   XX   XX   XX   XX   XX   kp0  kp1  kp2  kp3  kprt XX
+  XX   XX   XX   XX   XX   XX   spc  kp1  kp2  kp3  kprt bspc
   XX   XX   XX   XX                  kp0  kp0  kp.  kprt
   XX   XX   XX                                 XX   XX  
-  XX   XX   XX                                 XX   XX   XX 
+  XX   XX   XX                                 XX   _    kp0
 )
 
 
 (deflayer extend
   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX
-  XX   XX   XX   XX   XX   XX   home @D0[ @D0] @D{  @D}  @D\
+  XX   XX   XX   XX   XX   XX   home pgdn pgup end  @D}  @D\
   XX   XX   XX   XX   XX   XX   left down up   rght bspc   XX
-  XX   XX   XX   XX   XX   XX   XX   @D[  @D]  @D:    esc  XX
+  XX   XX   XX   XX   XX   XX   C-n  C-m  C-,  C-.  C-/    XX
   XX   XX   XX   XX                       XX   XX   XX   XX
   XX   XX   XX                                 XX   XX  
-  XX   XX   XX                                 XX   XX   XX 
+  XX   XX   XX                                 XX   XX   C-spc
 )

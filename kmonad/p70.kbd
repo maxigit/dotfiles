@@ -51,9 +51,10 @@
   tab (tap-hold-next 200 tab (layer-toggle tabbed))
   cap (tap-hold-next 200 caps (layer-toggle extend))
   csp (tap-hold-next 200 spc ctl)
-  cesc (tap-hold-next 200 esc ctl)
+  cesc (tap-hold-next 200 esc (layer-toggle extend))
   sr (tap-hold-next 200 ret rsft)
   sl (tap-hold-next 200 esc lsft)
+  grv (tap-hold-next 200 grv (layer-toggle extend))
   q C-spc
   ;; Symbols needs to be translated to equivalent qwerty
   ;; This is because use Xorg Dvorak mod which translates afterward
@@ -69,7 +70,7 @@
 )
 
 (deflayer as-qwerty
-  grv  1    2    3    4    5    6    7    8    9    0    -   =   bspc
+   grv 1    2    3    4    5    6    7    8    9    0    -   =   bspc
   @tab q    w    e    r    t    y    u    i    o    p    [   ]   ret
   @cesc a    s    d    f    g    h    j    k    l    ;    '   \
   @sl  z    x    c    v    b    n    m    ,    .    /    @sr 
@@ -88,8 +89,8 @@
 
 (deflayer extend
   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX  XX  XX
-  XX   XX   XX   XX   XX   XX   home @D0[ @D0] @D{  @D}  @D\ XX  XX
+  XX   XX   XX   XX   XX   XX   home pgdn pgup end  @D}  @D\ XX  XX
   XX   XX   XX   XX   XX   XX   left down up   rght bspc   XX XX
-  XX   XX   XX   XX   XX   XX   XX   @D[  @D]  @D:    esc  XX
-  XX   XX   XX          XX                XX   XX   XX
+  XX   XX   XX   XX   XX   XX   C-n  C-m  C-,  C-.  C-/    XX
+  XX   XX   XX          C-spc             XX   XX   XX
 )
