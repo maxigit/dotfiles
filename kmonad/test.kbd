@@ -51,7 +51,7 @@
   ;; num  (layer-toggle numbers) ;; Bind num to a button that switches to a layer
   ;; tnum (tap-hold-next 200 tab @num)
   tab (tap-hold-next 200 tab (layer-toggle tabbed))
-  cap (tap-hold-next 500 caps  (layer-toggle extend))
+  cap (tap-hold-next 200 caps (tap-macro caps (layer-toggle extend)))
   csp (tap-hold-next-release 200 spc ctl)
   sr (tap-hold-next 200 ret rsft)
   sl (tap-hold-next 200 esc lsft)
