@@ -49,12 +49,14 @@
   ;; num  (layer-toggle numbers) ;; Bind num to a button that switches to a layer
   ;; tnum (tap-hold-next 200 tab @num)
   tab (tap-hold-next 200 tab (layer-toggle tabbed))
-  cap (tap-hold-next 200 caps (tap-macro caps (layer-toggle extend)))
+  cap (multi-tap 900 caps (tap-macro (layer-toggle extend) caps))
   csp (tap-hold-next 200 spc ctl)
   cesc (tap-hold-next 200 esc (layer-toggle extend))
   sr (tap-hold-next 200 ret rsft)
   sl (tap-hold-next 200 esc lsft)
   grv (tap-hold-next 200 grv (layer-toggle extend))
+  try (multi-tap 300 a 300 n 300 i h)
+  X (layer-toggle extend)
   q C-spc
   ;; Symbols needs to be translated to equivalent qwerty
   ;; This is because use Xorg Dvorak mod which translates afterward
@@ -72,7 +74,7 @@
 (deflayer as-qwerty
    grv 1    2    3    4    5    6    7    8    9    0    -   =   bspc
   @tab q    w    e    r    t    y    u    i    o    p    [   ]   ret
-  @cap a    s    d    f    g    h    j    k    l    ;    '   \
+  caps a    s    d    f    g    h    j    k    l    ;    '   \
   @sl  z    x    c    v    b    n    m    ,    .    /    @sr 
   @csp lmet lalt       spc                ralt sys  rctl
 )
@@ -80,7 +82,7 @@
 
 (deflayer tabbed
   XX   XX   XX   XX   XX   XX   @D{  nlck =    kp/  kp*  @D} XX  XX
-  XX   XX   XX   XX   XX   XX   @D[  kp7  kp8  kp9  kp-  @D] XX  XX
+  XX   @X   @X   @X   XX   XX   @D[  kp7  kp8  kp9  kp-  @D] XX  XX
   XX   XX   XX   XX   @q   XX   @D0[ kp4  kp5  kp6  kp+  @D0] XX
   XX   XX   XX   XX   XX   XX   kp0  kp1  kp2  kp3  kprt XX
   XX   XX   XX          kp0               kp0  kp.  kprt

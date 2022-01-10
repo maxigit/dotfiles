@@ -56,6 +56,7 @@
   sr (tap-hold-next 200 ret rsft)
   sl (tap-hold-next 200 esc lsft)
   q C-spc
+  X (layer-toggle extend)
   ;; Symbols needs to be translated to equivalent qwerty
   ;; This is because use Xorg Dvorak mod which translates afterward
   D[ -
@@ -73,7 +74,7 @@
 (deflayer as-qwerty
   =    1    2    3    4    5    6    7    8    9    0    -
   @tab q    w    e    r    t    y    u    i    o    p    [
-  @cap a    s    d    f    g    h    j    k    l    ;    '
+  caps a    s    d    f    g    h    j    k    l    ;    '
   @sl  z    x    c    v    b    n    m    ,    .    /    @sr 
   grv  102d left right                    down up   \    ] 
   bspc lmet end                                pgup ralt 
@@ -93,7 +94,7 @@
 
 (deflayer tabbed
   XX   XX   XX   XX   XX   XX   @D{  nlck kp/  kp*  @D=  @D} 
-  XX   XX   XX   XX   XX   XX   @D[  kp7  kp8  kp9  kp-  @D]
+  XX   @X   @X   @X   XX   XX   @D[  kp7  kp8  kp9  kp-  @D]
   XX   XX   XX   XX   @q   XX   @D0[ kp4  kp5  kp6  kp+  @D0]
   XX   XX   XX   XX   XX   XX   spc  kp1  kp2  kp3  kprt bspc
   XX   XX   XX   XX                  kp0  kp0  kp.  kprt
