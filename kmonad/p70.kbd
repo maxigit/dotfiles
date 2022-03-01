@@ -81,7 +81,7 @@
 
 
 (deflayer tabbed
-  XX   XX   XX   XX   XX   XX   @D{  nlck =    kp/  kp*  @D} XX  XX
+  XX   previoussong   playpause   nextsong   XX   XX   @D{  nlck =    kp/  kp*  @D} XX  XX
   XX   @X   @X   @X   XX   XX   @D[  kp7  kp8  kp9  kp-  @D] XX  XX
   XX   XX   XX   XX   @q   XX   @D0[ kp4  kp5  kp6  kp+  @D0] XX
   XX XX   XX   XX   XX   XX   XX   kp0  kp1  kp2  kp3  kprt XX
@@ -93,6 +93,6 @@
   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX  XX  XX
   XX   XX   XX   XX   XX   XX   home pgdn pgup end  @D}  @D\ XX  XX
   XX   XX   XX   XX   XX   XX   left down up   rght bspc   XX XX
-  XX XX   XX   XX   XX   XX   XX   C-n  C-m  C-,  C-.  C-/    XX
+  XX XX   cut   copy   paste   XX   XX   C-n  C-m  C-,  C-.  C-/    XX
   XX   XX   XX          C-spc             XX   XX   XX
 )
