@@ -50,6 +50,7 @@
   ;; tnum (tap-hold-next 200 tab @num)
   tab (tap-hold-next 200 tab (layer-toggle tabbed))
   cap (multi-tap 900 caps (tap-macro (layer-toggle extend) caps))
+  caC (tap-hold-next 200 caps ctl)
   csp (tap-hold-next 200 spc ctl)
   cesc (tap-hold-next 200 esc (layer-toggle extend))
   sr (tap-hold-next 200 ret rsft)
@@ -74,8 +75,8 @@
 (deflayer as-qwerty
    grv 1    2    3    4    5    6    7    8    9    0    -   =   bspc
   @tab q    w    e    r    t    y    u    i    o    p    [   ]   ret
-  caps a    s    d    f    g    h    j    k    l    ;    '   \
-  @sl  @X z    x    c    v    b    n    m    ,    .    /    @sr 
+  @caC a    s    d    f    g    h    j    k    l    ;    '   \
+  @sl  ralt z    x    c    v    b    n    m    ,    .    /    @sr 
   @csp lmet lalt       spc                ralt sys  rctl
 )
 
