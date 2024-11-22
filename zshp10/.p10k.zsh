@@ -34,6 +34,7 @@
     # =========================[ Line #1 ]=========================
     host
     os_icon                 # os identifier
+    vim_shell               # vim shell indicator (:sh)
     dir                     # current directory
     vcs                     # git status
     # =========================[ Line #2 ]=========================
@@ -57,6 +58,7 @@
     pyenv                   # python environment (https://github.com/pyenv/pyenv)
     goenv                   # go environment (https://github.com/syndbg/goenv)
     nodenv                  # node.js version from nodenv (https://github.com/nodenv/nodenv)
+
     nvm                     # node.js version from nvm (https://github.com/nvm-sh/nvm)
     nodeenv                 # node.js environment (https://github.com/ekalinin/nodeenv)
     # node_version          # node.js version
@@ -92,7 +94,6 @@
     nnn                     # nnn shell (https://github.com/jarun/nnn)
     lf                      # lf shell (https://github.com/gokcehan/lf)
     xplr                    # xplr shell (https://github.com/sayanarijit/xplr)
-    vim_shell               # vim shell indicator (:sh)
     midnight_commander      # midnight commander shell (https://midnight-commander.org/)
     nix_shell               # nix shell (https://nixos.org/nixos/nix-pills/developing-with-nix-shell.html)
     chezmoi_shell           # chezmoi shell (https://www.chezmoi.io/)
@@ -779,8 +780,8 @@
 
   ###########################[ vim_shell: vim shell indicator (:sh) ]###########################
   # Vim shell indicator color.
-  typeset -g POWERLEVEL9K_VIM_SHELL_FOREGROUND=0
-  typeset -g POWERLEVEL9K_VIM_SHELL_BACKGROUND=2
+  typeset -g POWERLEVEL9K_VIM_SHELL_FOREGROUND=7
+  typeset -g POWERLEVEL9K_VIM_SHELL_BACKGROUND=1
   # Custom icon.
   # typeset -g POWERLEVEL9K_VIM_SHELL_VISUAL_IDENTIFIER_EXPANSION='⭐'
 
