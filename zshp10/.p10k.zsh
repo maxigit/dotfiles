@@ -26,6 +26,7 @@
   # restarting zsh. Edit ~/.p10k.zsh and type `source ~/.p10k.zsh`.
   unset -m '(POWERLEVEL9K_*|DEFAULT_USER)~POWERLEVEL9K_GITSTATUS_DIR'
 
+
   # Zsh >= 5.1 is required.
   [[ $ZSH_VERSION == (5.<1->*|<6->.*) ]] || return
 
@@ -33,8 +34,9 @@
   typeset -g POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(
     # =========================[ Line #1 ]=========================
     host
-    os_icon                 # os identifier
+    #os_icon                 # os identifier
     vim_shell               # vim shell indicator (:sh)
+    tmux
     dir                     # current directory
     vcs                     # git status
     # =========================[ Line #2 ]=========================
@@ -1789,6 +1791,16 @@
     # and regular prompts.
     prompt_example
   }
+  
+  function prompt_tmux() {
+    if [[ -n "$TMUX" ]]; then
+      # p10k segment -b green -f black -t 'T'
+      prompt_os_icon
+    else 
+      p10k segment -b red -f white -t '🖳 '
+    fi
+  }
+ 
 
   # User-defined prompt segments can be customized the same way as built-in segments.
   typeset -g POWERLEVEL9K_EXAMPLE_FOREGROUND=3
